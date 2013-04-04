@@ -30,7 +30,6 @@ noinst_HEADERS	= imi_scimwin.h\
 			sunpinyin_utils.h
 
 
-############### ise-engine-xt9.la ###################
 moduledir = @SUNPINYIN_MODULE_DIR@/IMEngine
 module_LTLIBRARIES = ise-engine-sunpinyin.la
 
@@ -39,12 +38,13 @@ ise_engine_sunpinyin_la_SOURCES =imi_scimwin.cpp\
                                   sunpinyin_lookup_table.cpp\
                                   sunpinyin_utils.cpp
 
-ise_engine_sunpinyin_la_CXXFLAGS = @ISF_CFLAGS@ ${ise_engine_sunpinyin_DEFINES}
+ise_engine_sunpinyin_la_CXXFLAGS = @ISF_CFLAGS@ @ECORE_CFLAGS@ ${ise_engine_sunpinyin_DEFINES}
 
 ise_engine_sunpinyin_la_LDFLAGS = -avoid-version \
 					-module \
 					-export-dynamic\
 					@ISF_LIBS@\
+					@ECORE_LIBS@\
 					 -lstdc++
 
 ise_engine_sunpinyin_la_LIBADD = $(top_builddir)/src/libsunpinyin.la

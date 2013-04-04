@@ -61,6 +61,8 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+#include <Ecore_IMF.h>
+
 #include <imi_options.h>
 #include <imi_view.h>
 #include <ic_history.h>
@@ -395,7 +397,11 @@ SunPyInstance::reset ()
     //hide_aux_string ();
     //m_pv->updateWindows(m_pv->clearIC());
     //refresh_all_properties ();
-    show_lookup_table ();
+    if (m_lookup_table_always_on) {
+        show_lookup_table ();
+    } else {
+        hide_lookup_table ();
+    }
     m_pv->updateWindows(CIMIView::PREEDIT_MASK | CIMIView::CANDIDATE_MASK);
 }
 
@@ -404,7 +410,7 @@ SunPyInstance::focus_in ()
 {
     SCIM_DEBUG_IMENGINE(3) << get_id() << ": focus_in ()\n";
     m_focused = true;
-    show_lookup_table ();
+    //show_lookup_table ();
     initialize_all_properties ();
     
     hide_preedit_string ();
@@ -448,6 +454,27 @@ SunPyInstance::trigger_property (const String &property)
     }
 }
 
+void
+SunPyInstance::set_layout (unsigned int layout)
+{
+    switch (layout)
+    {
+        case ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL:
+        case ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBER:
+        case ECORE_IMF_INPUT_PANEL_LAYOUT_EMAIL:
+        case ECORE_IMF_INPUT_PANEL_LAYOUT_URL:
+            show_lookup_table ();
+            m_lookup_table_always_on = true;
+            break;
+        case ECORE_IMF_INPUT_PANEL_LAYOUT_PHONENUMBER:
+        case ECORE_IMF_INPUT_PANEL_LAYOUT_IP:
+        case ECORE_IMF_INPUT_PANEL_LAYOUT_MONTH:
+        case ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY:
+            hide_lookup_table ();
+            m_lookup_table_always_on = false;
+            break;
+    }
+}
 
 void
 SunPyInstance::init_lookup_table_labels ()

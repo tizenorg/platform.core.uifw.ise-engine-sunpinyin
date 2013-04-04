@@ -10,6 +10,7 @@ BuildRequires:  gettext-tools
 BuildRequires:  pkgconfig(isf)
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(sqlite3)
+BuildRequires:  pkgconfig(ecore)
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 

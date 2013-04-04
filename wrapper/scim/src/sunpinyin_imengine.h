@@ -89,6 +89,7 @@ class SunPyInstance : public IMEngineInstanceBase
     CommonLookupTable   *m_common_lookup_table;
     Connection           m_reload_signal_connection;
     bool                 m_focused;
+    bool                 m_lookup_table_always_on;
     
   public:
     SunPyInstance(SunPyFactory *factory,
@@ -119,6 +120,10 @@ class SunPyInstance : public IMEngineInstanceBase
      * update the configuration of the input method
      */
     virtual void trigger_property (const String &property);
+    /**
+     * decide whether to display candidate window according to layout
+     */
+    virtual void set_layout (unsigned int layout);
 
 public:
     /**
