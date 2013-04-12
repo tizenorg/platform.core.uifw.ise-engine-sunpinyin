@@ -125,7 +125,6 @@ AC_SUBST(SUNPINYIN_LIBD_IR)
 AC_CONFIG_FILES([Makefile
          po/Makefile.in
          raw/Makefile
-         m4/Makefile
 		 src/Makefile
 		 src/ime-core/Makefile
 		 src/lexicon/Makefile

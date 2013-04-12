@@ -31,7 +31,7 @@ EXTRA_DIST = ChangeLog	\
 
 AUTOMAKE_OPTIONS 	= gnu
 
-SUBDIRS 		= po m4 src wrapper/scim raw
+SUBDIRS 		= po src wrapper/scim raw
 
 MAINTAINERCLEANFILES 	= Makefile.in aclocal.m4 configure config.h.in $(AUX_DIST)
 
