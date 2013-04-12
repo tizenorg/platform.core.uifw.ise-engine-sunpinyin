@@ -6,7 +6,6 @@ Group:      TO_BE/FILLED_IN
 License:    LGPLv2+
 Source0:    %{name}-%{version}.tar.gz
 BuildRequires:  prelink
-BuildRequires:  gettext-tools
 BuildRequires:  pkgconfig(isf)
 BuildRequires:  pkgconfig(glib-2.0)
 BuildRequires:  pkgconfig(sqlite3)
@@ -52,7 +51,6 @@ cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/l
 %files
 %defattr(-,root,root,-)
 %{_datadir}/scim/icons/sunpinyin_logo.png
-%{_datadir}/locale/*
 %{_datadir}/scim/ise-engine-sunpinyin/*
 %{_libdir}/scim-1.0/1.4.0/IMEngine/ise-engine-sunpinyin.so
 %{_libdir}/libsunpinyin*.so

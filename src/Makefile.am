@@ -42,7 +42,7 @@ libsunpinyin_la_SOURCES =
 
 libsunpinyin_la_CXXFLAGS = @ISF_CXXFLAGS@ @SQLITE_CXXFLAGS@ @GLIB_CXXFLAGS@ $(SUNPINYIN_DEFINES)
 
-libsunpinyin_la_LDFLAGS = -avoid-version  @LTLIBINTL@\
+libsunpinyin_la_LDFLAGS = -avoid-version \
 					-module \
 					-export-dynamic\
 					@ISF_LIBS@ \

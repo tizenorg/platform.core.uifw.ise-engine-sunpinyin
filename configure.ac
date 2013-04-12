@@ -12,10 +12,6 @@ GETTEXT_PACKAGE=sunpinyin
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [The gettext domain])
 
-# Init gettext
-ALL_LINGUAS="ko_KR en zh_CN zh_HK zh_TW de_DE nl_NL es_ES pt_PT el_GR it_IT fr_FR tr_TR ja_JP ru_RU"
-AM_GNU_GETTEXT([external])
-
 # Init libtool
 AC_DISABLE_STATIC
 AC_LIBTOOL_DLOPEN
@@ -123,7 +119,6 @@ AC_SUBST(SUNPINYIN_LIBD_IR)
 
 
 AC_CONFIG_FILES([Makefile
-         po/Makefile.in
          raw/Makefile
 		 src/Makefile
 		 src/ime-core/Makefile
