@@ -461,7 +461,7 @@ CIMIClassicView::_insert(unsigned keyvalue, unsigned &changeMasks)
 {
     changeMasks |= KEYEVENT_USED;
 
-    if (m_pPySegmentor->getInputBuffer().size() >= MAX_LATTICE_LENGTH - 1)
+    if (m_pPySegmentor->getInputBuffer().size() >= MAX_LATTICE_LENGTH - 2)
         return;
 
     if (m_cursorFrIdx == m_pIC->getLastFrIdx())

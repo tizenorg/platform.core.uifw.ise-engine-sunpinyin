@@ -39,7 +39,7 @@
 #ifndef SUNPY_IMI_CONFIG_H
 #define SUNPY_IMI_CONFIG_H
 
-#define MAX_LATTICE_LENGTH      512
+#define MAX_LATTICE_LENGTH      64
 #define MAX_LEXICON_TRIES       32
 #define UNKNOWN_WORD_ID         0
 #define NONE_WORD_ID            69

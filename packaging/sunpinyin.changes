@@ -1,0 +1,6 @@
+* Thu Jan 31 2013 Li Zhang <li2012.zhang@samsung.com> accepted/tizen_2.0/20130123.093018@a110cbf
+- Always show candidate
+- [N_SE-12903][N_SE-12802]flush to commit the first candidate.
+- Modifed to install LICENSE information
+- Initial Release
+

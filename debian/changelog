@@ -1,3 +1,11 @@
+ise-engine-sunpinyin (0.0.1321) unstable; urgency=low
+
+  * Fix out of bounds error.
+  * Git: 165.213.149.219:framework/uifw/ise-engine-sunpinyin
+  * Tag: ise-engine-sunpinyin_0.0.1321-1
+
+ -- Li Zhang <li2012.zhang@samsung.com>  Thu, 21 Feb 2013 16:20:00 +0800
+
 ise-engine-sunpinyin (0.0.1223) unstable; urgency=low
 
   * Showing candidate in reset.
