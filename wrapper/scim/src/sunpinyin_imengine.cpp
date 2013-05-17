@@ -276,7 +276,8 @@ SunPyInstance::SunPyInstance (SunPyFactory *factory,
       m_hotkey_profile (hotkey_profile),
       m_lookup_table (0),
       m_common_lookup_table(0),
-      m_focused (false)
+      m_focused (false),
+      m_lookup_table_always_on (false)
 {
     SCIM_DEBUG_IMENGINE (3) << get_id() << ": SunPyInstance()\n";
     create_session(hotkey_profile);
