@@ -1,7 +1,7 @@
 Name:       ise-engine-sunpinyin
 Summary:    Chinese Pinyin ISE
 Version:    0.0.1321
-Release:    1
+Release:    2
 Group:      TO_BE/FILLED_IN
 License:    LGPLv2+
 Source0:    %{name}-%{version}.tar.gz
