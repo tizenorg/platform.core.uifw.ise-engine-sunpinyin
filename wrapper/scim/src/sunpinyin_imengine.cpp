@@ -399,7 +399,8 @@ SunPyInstance::reset ()
     //m_pv->updateWindows(m_pv->clearIC());
     //refresh_all_properties ();
     if (m_lookup_table_always_on) {
-        show_lookup_table ();
+        if (m_focused)
+            show_lookup_table ();
     } else {
         hide_lookup_table ();
     }
