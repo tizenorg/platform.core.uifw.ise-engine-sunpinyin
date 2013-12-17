@@ -44,6 +44,7 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <sys/types.h>
+#include <stdlib.h>
 
 #include "settings.h"
 #include "xmisc.h"
@@ -313,9 +314,14 @@ static void
 send_reload()
 {
     /* notify all running xsunpinyin with this user */
-    char cmd[256];
-    snprintf(cmd, 256, "/usr/bin/pkill -10 '^xsunpinyin$' -u %d", getuid());
-    system(cmd);
+    pid_t child_pid = fork();
+    if (child_pid == 0)
+    {
+        char cmd[256] = {0};
+        snprintf(cmd, 256, "%d", getuid());
+        execl("/usr/bin/pkill", "/usr/bin/pkill", "-10", "^xsunpinyin$", "-u", cmd, (char*)0);
+        exit(0);
+    }
 }
 
 void
