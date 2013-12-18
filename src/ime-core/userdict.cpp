@@ -120,12 +120,10 @@ CUserDict::removeWord(unsigned wid)
 {
     assert(m_db != NULL);
     char    *zErr = NULL;
-    char sql[256] = "DELETE FROM dict WHERE id=";
-
     if (wid > INI_USRDEF_WID) {
-        sprintf(sql, "%s%d;", sql, (wid - INI_USRDEF_WID));
+        char *sql = sqlite3_mprintf("DELETE FROM dict WHERE id=%d;", (wid - INI_USRDEF_WID));
         sqlite3_exec(m_db, sql, NULL, NULL, &zErr);
-
+        sqlite3_free(sql);
         m_dict.erase(m_dict.find(wid - INI_USRDEF_WID));
     }
 }
