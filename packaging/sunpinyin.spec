@@ -3,7 +3,7 @@ Summary:    Chinese Pinyin ISE
 Version:    0.0.1423
 Release:    2
 Group:      TO_BE/FILLED_IN
-License:    LGPLv2+
+License:    LGPL-2.1+ and CDDL-1.0
 Source0:    %{name}-%{version}.tar.gz
 BuildRequires:  prelink
 BuildRequires:  pkgconfig(isf)
@@ -60,3 +60,4 @@ cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/l
 %defattr(-,root,root,-)
 %{_includedir}/*
 %{_libdir}/pkgconfig/sunpinyin-2.0.pc
+%{_datadir}/license/%{name}
