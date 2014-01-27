@@ -39,6 +39,8 @@ execstack -c %{buildroot}%{_libdir}/scim-1.0/1.4.0/IMEngine/ise-engine-sunpinyin
 mkdir -p %{buildroot}%{_datadir}/license
 install -m0644 %{_builddir}/%{buildsubdir}/LGPL.LICENSE %{buildroot}%{_datadir}/license/%{name}
 cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/license/%{name}
+install -m0644 %{_builddir}/%{buildsubdir}/LGPL.LICENSE %{buildroot}%{_datadir}/license/%{name}-devel
+cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/license/%{name}-devel
 
 %define __debug_install_post   \
     %{_rpmconfigdir}/find-debuginfo.sh %{?_find_debuginfo_opts} "%{_builddir}/%{?buildsubdir}"\
@@ -54,10 +56,10 @@ cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/l
 %{_datadir}/scim/ise-engine-sunpinyin/*
 %{_libdir}/scim-1.0/1.4.0/IMEngine/ise-engine-sunpinyin.so
 %{_libdir}/libsunpinyin*.so
-%{_datadir}/license/%{name}
+/usr/share/license/%{name}
 
 %files devel
 %defattr(-,root,root,-)
 %{_includedir}/*
 %{_libdir}/pkgconfig/sunpinyin-2.0.pc
-%{_datadir}/license/%{name}
+/usr/share/license/%{name}-devel
