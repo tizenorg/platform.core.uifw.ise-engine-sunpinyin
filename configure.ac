@@ -87,12 +87,17 @@ if test "$enable_debug" = "yes"; then
 fi
 
 ISF_ICONDIR=`$PKG_CONFIG --variable=icondir scim`
+ISF_PKGDIR=`$PKG_CONFIG --variable=pkgdir scim`
 ISF_MODULEDIR=`$PKG_CONFIG --variable=moduledir scim`
 ISF_DATADIR=`$PKG_CONFIG --variable=scimdatadir scim`
 ISF_LIBDIR=`$PKG_CONFIG --variable=libdir scim`
 
 if test "x$ISF_ICONDIR" = "x"; then
   ISF_ICONDIR=${datadir}/scim/icons
+fi
+
+if test "x$ISF_PKGDIR" = "x"; then
+  ISF_PKGDIR=${datadir}/packages
 fi
 
 if test "x$ISF_MODULEDIR" = "x"; then
@@ -108,11 +113,13 @@ if test "x$ISF_LIBDIR" = "x"; then
 fi
 
 SUNPINYIN_ICON_DIR=${ISF_ICONDIR}
+SUNPINYIN_PKG_DIR=${ISF_PKGDIR}
 SUNPINYIN_MODULE_DIR=${ISF_MODULEDIR}
 SUNPINYIN_DATA_DIR=${ISF_DATADIR}/ise-engine-sunpinyin
 SUNPINYIN_LIB_DIR=${ISF_LIBDIR}
 
 AC_SUBST(SUNPINYIN_ICON_DIR)
+AC_SUBST(SUNPINYIN_PKG_DIR)
 AC_SUBST(SUNPINYIN_MODULE_DIR)
 AC_SUBST(SUNPINYIN_DATA_DIR)
 AC_SUBST(SUNPINYIN_LIBD_IR)

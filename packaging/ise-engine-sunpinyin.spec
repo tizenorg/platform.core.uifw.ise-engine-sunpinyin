@@ -53,6 +53,7 @@ cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/l
 %defattr(-,root,root,-)
 %{_datadir}/scim/icons/sunpinyin_logo.png
 %{_datadir}/scim/ise-engine-sunpinyin/*
+%{_datadir}/packages/*
 %{_libdir}/scim-1.0/1.4.0/IMEngine/ise-engine-sunpinyin.so
 %{_libdir}/libsunpinyin*.so
 /usr/share/license/%{name}

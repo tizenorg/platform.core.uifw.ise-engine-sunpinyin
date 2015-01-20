@@ -43,6 +43,9 @@ pkgconfig_DATA          = sunpinyin-2.0.pc
 ACLOCAL			= aclocal -I m4
 ACLOCAL_AMFLAGS = -I m4
 
+pkgdir	= $(SUNPINYIN_PKG_DIR)
+pkg_DATA	= ise-engine-sunpinyin.xml
+
 .PHONY: ChangeLog
 
 ChangeLog:
