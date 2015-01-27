@@ -2,7 +2,7 @@ Name:       ise-engine-sunpinyin
 Summary:    Chinese Pinyin ISE
 Version:    0.0.1518
 Release:    1
-Group:      TO_BE/FILLED_IN
+Group:      Graphics & UI Framework/Input
 License:    LGPL-2.1+ and CDDL-1.0
 Source0:    %{name}-%{version}.tar.gz
 BuildRequires:  prelink
@@ -18,7 +18,7 @@ Requires(postun): /sbin/ldconfig
 Chinese Pinyin Engine ISE and it has been supported by Input Service Framework(ISF).
 
 %package devel
-Summary:    ise-engine-sunpinyin header files
+Summary:    Chinese Pinyin ISE header files
 Group:      Development/Libraries
 
 %description devel
