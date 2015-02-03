@@ -35,7 +35,7 @@ libsunpinyininclude_HEADERS 	= portability.h\
 				    ime-core/imi_uiobjects.h
 #####################sunpinyin##########################
 SUNPINYIN_DEFINES=-DSUNPINYIN_DATA_DIR=\"@SUNPINYIN_DATA_DIR@\"
-moduledir = /usr/lib
+moduledir = $(libdir)
 module_LTLIBRARIES = libsunpinyin.la
 
 libsunpinyin_la_SOURCES = 

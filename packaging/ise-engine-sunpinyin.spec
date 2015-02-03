@@ -35,7 +35,6 @@ make %{?jobs:-j%jobs}
 %install
 rm -rf %{buildroot}
 %make_install
-execstack -c %{buildroot}%{_libdir}/scim-1.0/1.4.0/IMEngine/ise-engine-sunpinyin.so
 mkdir -p %{buildroot}%{_datadir}/license
 install -m0644 %{_builddir}/%{buildsubdir}/LGPL.LICENSE %{buildroot}%{_datadir}/license/%{name}
 cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/license/%{name}
