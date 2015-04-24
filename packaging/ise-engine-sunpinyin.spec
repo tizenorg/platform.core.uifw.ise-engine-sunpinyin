@@ -36,10 +36,10 @@ make %{?jobs:-j%jobs}
 rm -rf %{buildroot}
 %make_install
 mkdir -p %{buildroot}%{_datadir}/license
-install -m0644 %{_builddir}/%{buildsubdir}/LICENSE %{buildroot}%{_datadir}/license/%{name}
-cat %{_builddir}/%{buildsubdir}/LICENSE.CDDL-1.0 >> %{buildroot}%{_datadir}/license/%{name}
-install -m0644 %{_builddir}/%{buildsubdir}/LICENSE %{buildroot}%{_datadir}/license/%{name}-devel
-cat %{_builddir}/%{buildsubdir}/LICENSE.CDDL-1.0 >> %{buildroot}%{_datadir}/license/%{name}-devel
+install -m0644 %{_builddir}/%{buildsubdir}/LGPL.LICENSE %{buildroot}%{_datadir}/license/%{name}
+cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/license/%{name}
+install -m0644 %{_builddir}/%{buildsubdir}/LGPL.LICENSE %{buildroot}%{_datadir}/license/%{name}-devel
+cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/license/%{name}-devel
 
 %define __debug_install_post   \
     %{_rpmconfigdir}/find-debuginfo.sh %{?_find_debuginfo_opts} "%{_builddir}/%{?buildsubdir}"\
