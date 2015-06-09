@@ -4,7 +4,7 @@
 <description/>
 <label>Chinese (sunpinyin) keyboard</label>
 <icon/>
-<ui-application appid="3240fe82-585a-4f4a-96b3-0cad779c3b51" exec="/usr/lib/scim-1.0/scim-launcher" nodisplay="true" taskmanage="false" multiple="false" type="capp" hw-acceleration="use-system-setting" mainapp="true">
+<ui-application appid="org.tizen.ise-engine-sunpinyin" exec="/usr/lib/scim-1.0/scim-launcher" nodisplay="true" taskmanage="false" multiple="false" type="capp" hw-acceleration="use-system-setting" mainapp="true">
     <category name="http://tizen.org/category/ime"/>
     <label>Chinese (sunpinyin) keyboard</label>
     <label xml:lang="en-gb">Chinese (sunpinyin) keyboard</label>

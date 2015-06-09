@@ -241,7 +241,7 @@ SunPyFactory::get_help () const
 String
 SunPyFactory::get_uuid () const
 {
-    return String ("3240fe82-585a-4f4a-96b3-0cad779c3b51");
+    return String ("org.tizen.ise-engine-sunpinyin");
 }
 
 String
