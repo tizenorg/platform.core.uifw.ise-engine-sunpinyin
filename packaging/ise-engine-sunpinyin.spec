@@ -46,8 +46,10 @@ cat %{_builddir}/%{buildsubdir}/OPENSOLARIS.LICENSE >> %{buildroot}%{_datadir}/l
 %{nil}
 
 %post -p /sbin/ldconfig
+pkg_initdb
 
 %postun -p /sbin/ldconfig
+pkg_initdb
 
 %files
 %defattr(-,root,root,-)
