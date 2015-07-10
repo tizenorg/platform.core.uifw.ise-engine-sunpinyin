@@ -1,6 +1,6 @@
 #-*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
-AC_INIT([sunpinyin],[0.0.1518], [mail@yongsun.me])
+AC_INIT([sunpinyin],[1.0.0], [mail@yongsun.me])
 AC_PREREQ([2.59])
 AC_CONFIG_SRCDIR([configure.ac])
 AC_CONFIG_MACRO_DIR([m4])
