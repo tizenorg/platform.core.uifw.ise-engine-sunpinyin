@@ -52,6 +52,7 @@ pkg_initdb
 pkg_initdb
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_datadir}/scim/icons/sunpinyin_logo.png
 %{_datadir}/scim/ise-engine-sunpinyin/*
