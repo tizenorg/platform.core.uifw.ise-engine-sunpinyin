@@ -44,7 +44,6 @@ ise_engine_sunpinyin_la_LDFLAGS = -avoid-version \
 					-module \
 					-export-dynamic\
 					@ISF_LIBS@\
-					@ECORE_IMF_LIBS@\
 					 -lstdc++
 
 ise_engine_sunpinyin_la_LIBADD = $(top_builddir)/src/libsunpinyin.la

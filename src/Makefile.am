@@ -40,14 +40,12 @@ module_LTLIBRARIES = libsunpinyin.la
 
 libsunpinyin_la_SOURCES = 
 
-libsunpinyin_la_CXXFLAGS = @ISF_CXXFLAGS@ @SQLITE_CXXFLAGS@ @GLIB_CXXFLAGS@ $(SUNPINYIN_DEFINES)
+libsunpinyin_la_CXXFLAGS = @ISF_CXXFLAGS@ $(SUNPINYIN_DEFINES)
 
 libsunpinyin_la_LDFLAGS = -avoid-version \
 					-module \
 					-export-dynamic\
 					@ISF_LIBS@ \
-					@SQLITE_LIBS@\
-					@GLIB_LIBS@\
 					-lstdc++ 
 
 libsunpinyin_la_LIBADD = libportability.la\
