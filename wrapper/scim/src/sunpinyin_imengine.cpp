@@ -481,8 +481,8 @@ SunPyInstance::set_layout (unsigned int layout)
 void
 SunPyInstance::init_lookup_table_labels ()
 {
-    m_pv->setCandiWindowSize(10);
-    m_lookup_table->set_page_size (10);
+    m_pv->setCandiWindowSize(50);
+    m_lookup_table->set_page_size (50);
     m_lookup_table->show_cursor ();
 }
 
@@ -547,7 +547,7 @@ SunPyInstance::create_session(CHotkeyProfile *hotkey_profile)
     AttributeList attrs;
     CSunpinyinSessionFactory& factory = CSunpinyinSessionFactory::getFactory();
     factory.setPinyinScheme(CSunpinyinSessionFactory::QUANPIN);
-    factory.setCandiWindowSize(10);
+    factory.setCandiWindowSize(50);
     m_pv = factory.createSession();
     if (!m_pv) {
         SCIM_DEBUG_IMENGINE (3) << get_id() <<  " factory.createSession() failed\n";
