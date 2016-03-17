@@ -1,6 +1,6 @@
 Name:       ise-engine-sunpinyin
 Summary:    Chinese Pinyin ISE
-Version:    1.0.4
+Version:    1.0.5
 Release:    1
 Group:      Graphics & UI Framework/Input
 License:    LGPL-2.1+ and CDDL-1.0
