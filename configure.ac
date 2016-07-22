@@ -47,7 +47,6 @@ ISF_VERSION=1.0.0
 PKG_CHECK_MODULES(ISF,[isf >= $ISF_VERSION])
 PKG_CHECK_MODULES(SQLITE, [sqlite3 >= 0.0])
 PKG_CHECK_MODULES(GLIB, [glib-2.0 >= 2.0])
-PKG_CHECK_MODULES(ECORE_IMF, [ecore-imf >= 0.0])
 
 # Check if we should build setup module
 PKG_CHECK_MODULES(ISF_GTKUTILS,[isf-gtkutils >= $ISF_VERSION],

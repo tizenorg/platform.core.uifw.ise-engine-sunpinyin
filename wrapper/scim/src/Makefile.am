@@ -38,7 +38,7 @@ ise_engine_sunpinyin_la_SOURCES =imi_scimwin.cpp\
                                   sunpinyin_lookup_table.cpp\
                                   sunpinyin_utils.cpp
 
-ise_engine_sunpinyin_la_CXXFLAGS = @ISF_CFLAGS@ @ECORE_IMF_CFLAGS@ ${ise_engine_sunpinyin_DEFINES}
+ise_engine_sunpinyin_la_CXXFLAGS = @ISF_CFLAGS@ ${ise_engine_sunpinyin_DEFINES}
 
 ise_engine_sunpinyin_la_LDFLAGS = -avoid-version \
 					-module \

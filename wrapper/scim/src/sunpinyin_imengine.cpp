@@ -61,8 +61,6 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include <Ecore_IMF.h>
-
 #include <imi_options.h>
 #include <imi_view.h>
 #include <ic_history.h>
@@ -459,23 +457,8 @@ SunPyInstance::trigger_property (const String &property)
 void
 SunPyInstance::set_layout (unsigned int layout)
 {
-    switch (layout)
-    {
-        case ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL:
-        case ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBER:
-        case ECORE_IMF_INPUT_PANEL_LAYOUT_EMAIL:
-        case ECORE_IMF_INPUT_PANEL_LAYOUT_URL:
-            show_lookup_table ();
-            m_lookup_table_always_on = true;
-            break;
-        case ECORE_IMF_INPUT_PANEL_LAYOUT_PHONENUMBER:
-        case ECORE_IMF_INPUT_PANEL_LAYOUT_IP:
-        case ECORE_IMF_INPUT_PANEL_LAYOUT_MONTH:
-        case ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY:
-            hide_lookup_table ();
-            m_lookup_table_always_on = false;
-            break;
-    }
+    show_lookup_table ();
+    m_lookup_table_always_on = true;
 }
 
 void
