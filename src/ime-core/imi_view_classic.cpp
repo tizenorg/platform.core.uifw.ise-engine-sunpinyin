@@ -90,7 +90,6 @@ CIMIClassicView::updateWindows(unsigned mask)
         m_uiPreeditString.clear();
         getPreeditString(m_uiPreeditString);
         // m_pWinHandler->updatePreedit(&ps);
-        handlerUpdatePreedit(&m_uiPreeditString);
     }
 
     if ((mask & PREEDIT_MASK) || (mask & CANDIDATE_MASK)) {
@@ -141,6 +140,10 @@ CIMIClassicView::updateWindows(unsigned mask)
                          m_candiWindowSize);
         // m_pWinHandler->updateCandidates(&cl);
         handlerUpdateCandidates(&m_uiPreeditString, &m_uiCandidateList);
+    }
+
+    if (mask & PREEDIT_MASK) {
+        handlerUpdatePreedit(&m_uiPreeditString);
     }
 }
 

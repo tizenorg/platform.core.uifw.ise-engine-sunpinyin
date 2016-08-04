@@ -390,7 +390,7 @@ void
 SunPyInstance::reset ()
 {
     SCIM_DEBUG_IMENGINE (3) << get_id() << ": reset()\n";
-    flush();
+    m_pv->clearIC();
     m_lookup_table->clear ();
     hide_preedit_string ();
     //hide_aux_string ();
@@ -606,9 +606,8 @@ SunPyInstance::redraw_preedit_string (const IPreeditString* ppd)
                                        ppd->charTypeSize(),
                                        SCIM_ATTR_DECORATE, SCIM_ATTR_DECORATE_REVERSE));
         }
-        update_preedit_string( wstr_to_widestr(ppd->string(), ppd->size()) );
+        update_preedit_string( wstr_to_widestr(ppd->string(), ppd->size()), m_lookup_table->get_candidate(0), attrs, caret);
         show_preedit_string ();
-        update_preedit_caret (caret);
     } else {
         hide_preedit_string ();
     }
