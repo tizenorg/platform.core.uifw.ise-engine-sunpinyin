@@ -390,7 +390,7 @@ void
 SunPyInstance::reset ()
 {
     SCIM_DEBUG_IMENGINE (3) << get_id() << ": reset()\n";
-    flush();
+    m_pv->clearIC();
     m_lookup_table->clear ();
     hide_preedit_string ();
     //hide_aux_string ();
@@ -606,9 +606,13 @@ SunPyInstance::redraw_preedit_string (const IPreeditString* ppd)
                                        ppd->charTypeSize(),
                                        SCIM_ATTR_DECORATE, SCIM_ATTR_DECORATE_REVERSE));
         }
-        update_preedit_string( wstr_to_widestr(ppd->string(), ppd->size()) );
+        int hanzi_end = 0;
+        for ( ;hanzi_end < ppd->size(); hanzi_end++)
+            if (!(ppd->charTypeAt(hanzi_end) & IPreeditString::USER_CHOICE))
+                break;
+        WideString preedit = wstr_to_widestr(ppd->string(), ppd->size());
+        update_preedit_string( preedit, preedit.substr(0, hanzi_end) + m_lookup_table->get_candidate(0), attrs, caret);
         show_preedit_string ();
-        update_preedit_caret (caret);
     } else {
         hide_preedit_string ();
     }
@@ -618,7 +622,7 @@ void
 SunPyInstance::redraw_lookup_table(const ICandidateList* pcl)
 {
     SCIM_DEBUG_IMENGINE (3) << get_id() << ": redraw_lookup_table()\n";
-    
+
     m_lookup_table->update(*pcl);
     if (m_lookup_table->number_of_candidates()) {
         update_lookup_table(*m_lookup_table);
